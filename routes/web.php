@@ -32,6 +32,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [App\Http\Controllers\Post\GetPostController::class, 'getAllPosts'] )->name('posts.index');
         Route::get('/create', [App\Http\Controllers\Post\GetPostController::class, 'create'] )->name('posts.create');
         Route::post('/create', [App\Http\Controllers\Post\GetPostController::class, 'store'] )->name('posts.store');
+        Route::get('/show/{post}', [App\Http\Controllers\Post\GetPostController::class, 'show'] )->name('posts.show');
+        Route::post('/show/grade/{post}', [App\Http\Controllers\Post\GetPostController::class, 'addGrade'] )->name('posts.update');
     });
 });
 
